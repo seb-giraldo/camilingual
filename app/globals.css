@@ -1,26 +1,58 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-serif: var(--font-merriweather), Georgia, serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@theme {
+  --color-ink: #1e2d24;
+  --color-cream: #faf7f2;
+  --color-sand: #f7f4ee;
+  --color-line: #e8e2d8;
+  --color-line-strong: #e5ddd1;
+  --color-ocean: #4b8299;
+  --color-skyline: #99bfdf;
+  --color-tangerine: #e99e26;`
+  --color-toffee: #da682f;
+
+  --shadow-soft: 0 1px 3px rgb(131 84 0 / 0.05);
+  --shadow-card: 0 4px 20px -2px rgb(84 69 53 / 0.06);
+  --shadow-float: 0 10px 25px -5px rgb(84 69 53 / 0.08);
+  --shadow-panel: 0 15px 30px -5px rgb(84 69 53 / 0.08);
+}
+
+@layer base {
+  html {
+    /* Keep anchor targets clear of the sticky header. */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-cream font-sans text-ink;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Material Symbols glyph. Kept in the components layer so text-* utilities can size it. */
+  .icon {
+    font-family: "Material Symbols Outlined";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    direction: ltr;
+    vertical-align: middle;
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
+
+  .icon-filled {
+    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  }
 }
