@@ -1,7 +1,14 @@
 "use client";
 
-import { Children, useEffect, useEffectEvent, useRef, useState, type ReactNode } from "react";
-import { Icon } from "./icon";
+import {
+  Children,
+  useEffect,
+  useEffectEvent,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
+import { Icon } from "./Icon";
 
 type CarouselProps = {
   /** Rendered to the left of the arrow controls. */
@@ -10,7 +17,8 @@ type CarouselProps = {
   children: ReactNode;
 };
 
-const slidesOf = (track: HTMLElement) => Array.from(track.children) as HTMLElement[];
+const slidesOf = (track: HTMLElement) =>
+  Array.from(track.children) as HTMLElement[];
 
 const isAtEnd = (track: HTMLElement) =>
   track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
@@ -29,8 +37,13 @@ export function Carousel({ heading, children }: CarouselProps) {
     const track = trackRef.current;
     const slide = track && slidesOf(track)[index];
     if (!track || !slide) return;
-    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    track.scrollTo({ left: slide.offsetLeft, behavior: reduceMotion ? "auto" : "smooth" });
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+    track.scrollTo({
+      left: slide.offsetLeft,
+      behavior: reduceMotion ? "auto" : "smooth",
+    });
     // Update now so rapid clicks keep advancing while the smooth scroll is still running.
     setActive(index);
   };
@@ -43,7 +56,9 @@ export function Carousel({ heading, children }: CarouselProps) {
       setActive(count - 1);
       return;
     }
-    const distances = slidesOf(track).map((slide) => Math.abs(slide.offsetLeft - track.scrollLeft));
+    const distances = slidesOf(track).map((slide) =>
+      Math.abs(slide.offsetLeft - track.scrollLeft),
+    );
     setActive(distances.indexOf(Math.min(...distances)));
   };
 
@@ -86,10 +101,20 @@ export function Carousel({ heading, children }: CarouselProps) {
         <div className="max-w-2xl">{heading}</div>
         {scrollable && (
           <div className="flex items-center gap-3">
-            <button type="button" aria-label="Previous slide" onClick={prev} className={arrowClass}>
+            <button
+              type="button"
+              aria-label="Previous slide"
+              onClick={prev}
+              className={arrowClass}
+            >
               <Icon name="arrow_back" className="text-xl" />
             </button>
-            <button type="button" aria-label="Next slide" onClick={next} className={arrowClass}>
+            <button
+              type="button"
+              aria-label="Next slide"
+              onClick={next}
+              className={arrowClass}
+            >
               <Icon name="arrow_forward" className="text-xl" />
             </button>
           </div>
@@ -114,7 +139,9 @@ export function Carousel({ heading, children }: CarouselProps) {
               aria-current={i === active}
               onClick={() => goTo(i)}
               className={`rounded-full transition-all ${
-                i === active ? "h-3 w-3 bg-toffee" : "h-2.5 w-2.5 bg-skyline hover:bg-ocean"
+                i === active
+                  ? "h-3 w-3 bg-toffee"
+                  : "h-2.5 w-2.5 bg-skyline hover:bg-ocean"
               }`}
             />
           ))}

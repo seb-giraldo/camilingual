@@ -6,15 +6,15 @@
 }
 
 @theme {
-  --color-ink: #1e2d24;
+  --color-ink: #1d1d1f;
   --color-cream: #faf7f2;
   --color-sand: #f7f4ee;
   --color-line: #e8e2d8;
   --color-line-strong: #e5ddd1;
-  --color-ocean: #4b8299;
-  --color-skyline: #99bfdf;
-  --color-tangerine: #e99e26;`
-  --color-toffee: #da682f;
+  --color-ocean: #3a5550;
+  --color-skyline: #80a2a2;
+  --color-tangerine: #e99e26;
+  --color-toffee: #df7f36;
 
   --shadow-soft: 0 1px 3px rgb(131 84 0 / 0.05);
   --shadow-card: 0 4px 20px -2px rgb(84 69 53 / 0.06);
@@ -49,10 +49,18 @@
     vertical-align: middle;
     font-feature-settings: "liga";
     -webkit-font-smoothing: antialiased;
-    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    font-variation-settings:
+      "FILL" 0,
+      "wght" 400,
+      "GRAD" 0,
+      "opsz" 24;
   }
 
   .icon-filled {
-    font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+    font-variation-settings:
+      "FILL" 1,
+      "wght" 400,
+      "GRAD" 0,
+      "opsz" 24;
   }
 }

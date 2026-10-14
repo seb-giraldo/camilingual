@@ -1,5 +1,5 @@
-import { Carousel } from "./carousel";
-import { Icon } from "./icon";
+import { Carousel } from "./Carousel";
+import { Icon } from "./Icon";
 
 type Accent = "ocean" | "tangerine" | "toffee";
 

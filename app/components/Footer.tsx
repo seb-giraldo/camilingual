@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Icon } from "./icon";
+import { Icon } from "./Icon";
 
 const linkGroups = [
   {
@@ -31,9 +31,12 @@ const linkGroups = [
   },
 ];
 
-export function SiteFooter() {
+export function Footer() {
   return (
-    <footer id="contact" className="border-t border-skyline/20 bg-ink pt-16 pb-12 font-serif text-white">
+    <footer
+      id="contact"
+      className="border-t border-skyline/20 bg-ink pt-16 pb-12 font-serif text-white"
+    >
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-1 gap-10 border-b border-white/10 pb-12 md:grid-cols-2 lg:grid-cols-5">
           <div className="flex flex-col gap-4 lg:col-span-2">
@@ -49,13 +52,19 @@ export function SiteFooter() {
               <p className="text-sm font-bold text-toffee">Camila Giraldo</p>
               <p className="flex items-center gap-2">
                 <Icon name="call" className="text-base text-skyline" />
-                <a href="tel:5743204518" className="transition-colors hover:text-skyline">
+                <a
+                  href="tel:5743204518"
+                  className="transition-colors hover:text-skyline"
+                >
                   (574) 320-4518
                 </a>
               </p>
               <p className="flex items-center gap-2">
                 <Icon name="mail" className="text-base text-skyline" />
-                <a href="mailto:camilingualbiz@gmail.com" className="transition-colors hover:text-skyline">
+                <a
+                  href="mailto:camilingualbiz@gmail.com"
+                  className="transition-colors hover:text-skyline"
+                >
                   camilingualbiz@gmail.com
                 </a>
               </p>
@@ -64,11 +73,16 @@ export function SiteFooter() {
 
           {linkGroups.map((group, i) => (
             <div key={group.title} className="flex flex-col gap-3">
-              <span className="text-xs font-bold uppercase tracking-wider text-skyline">{group.title}</span>
+              <span className="text-xs font-bold uppercase tracking-wider text-skyline">
+                {group.title}
+              </span>
               <ul className="space-y-2 text-xs text-white/70">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <a href={link.href} className="transition-colors hover:text-white">
+                    <a
+                      href={link.href}
+                      className="transition-colors hover:text-white"
+                    >
                       {link.label}
                     </a>
                   </li>

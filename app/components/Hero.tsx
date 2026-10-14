@@ -1,17 +1,18 @@
-import { Icon } from "./icon";
+import Link from "next/link";
+import { Icon } from "./Icon";
 
 const headshotMask =
   "radial-gradient(90% 80% at 50% 45%, black 45%, rgba(0, 0, 0, 0.6) 70%, transparent 100%)";
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden py-16 lg:py-24">
+    <section className="relative overflow-hidden h-[calc(100vh-80px)] py-16 lg:py-12">
       {/* Ambient background orbs */}
       <div className="pointer-events-none absolute -top-24 -left-20 h-96 w-96 rounded-full bg-skyline/25 blur-3xl" />
       <div className="pointer-events-none absolute top-1/2 right-0 h-[480px] w-[480px] rounded-full bg-tangerine/15 blur-3xl" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
+      <div className="relative z-10 mx-auto max-w-7xl px-6 h-full">
+        <div className="flex items-center gap-12 lg:grid-cols-12 lg:gap-8 h-full">
           <div className="flex flex-col items-start gap-6 lg:col-span-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-skyline/50 bg-skyline/20 px-3.5 py-1.5 text-ocean">
               <span className="h-2 w-2 animate-pulse rounded-full bg-ocean" />
@@ -25,7 +26,8 @@ export function Hero() {
             </h1>
 
             <p className="max-w-xl font-serif text-2xl leading-snug font-bold text-ocean sm:text-3xl">
-              One language stands between you and your goals. Let’s bridge the gap.
+              One language stands between you and your goals. Let’s bridge the
+              gap.
             </p>
 
             <div className="flex flex-wrap items-center gap-4 pt-2">
@@ -56,16 +58,20 @@ export function Hero() {
             </div>
           </div>
 
-          <div id="about" className="relative flex justify-center lg:col-span-5 lg:justify-end">
-            <div className="relative w-full max-w-md">
-              <div className="absolute -top-4 -right-4 z-20 flex rotate-2 items-center gap-2 rounded-2xl border border-line bg-white px-4 py-2 shadow-float transition-transform hover:rotate-0">
+          <div
+            id="about"
+            className="relative flex justify-center h-full mt-[38vh] lg:col-span-5 lg:justify-end"
+          >
+            <div className="relative w-full max-w-md z-2">
+              <div className="absolute -top-40 right-7 z-20 flex rotate-6 items-center gap-2 rounded-2xl border border-line bg-white px-4 py-2 shadow-float transition-transform hover:rotate-8">
                 <span className="h-2.5 w-2.5 rounded-full bg-toffee" />
-                <span className="text-xs font-extrabold text-ink">Bilingual Native Coach</span>
+                <span className="text-xs font-extrabold text-ink">
+                  Bilingual Native Coach
+                </span>
               </div>
 
-              {/* Headshot placeholder: swap the inner block for an <Image> once the photo is ready. */}
-              <div
-                className="relative flex w-full items-center justify-center overflow-hidden pt-8 pb-16"
+              <figure
+                className="flex w-78 absolute z-0 left-1/2 -translate-x-1/2 -top-41"
                 style={{
                   background:
                     "radial-gradient(circle at 50% 50%, rgba(255,255,255,0.7) 0%, rgba(250,247,242,0) 70%)",
@@ -73,18 +79,24 @@ export function Hero() {
                   WebkitMaskImage: headshotMask,
                 }}
               >
-                <div className="flex w-full flex-col items-center justify-center p-6 text-center">
-                  <div className="mb-4 flex h-36 w-36 flex-col items-center justify-center rounded-full border-2 border-dashed border-ocean/40 bg-ocean/15 text-ocean shadow-inner">
-                    <Icon name="person" className="text-5xl" />
-                    <span className="mt-1 text-[11px] font-bold tracking-tight uppercase">Headshot</span>
-                  </div>
-                  <h3 className="font-serif text-2xl font-bold text-ink">Camila Giraldo</h3>
-                  <p className="mt-0.5 text-sm font-semibold text-ocean">Founder &amp; Bilingual Tutor</p>
-                  <p className="mt-2 text-xs text-ink/50 italic">(Client headshot will be placed here)</p>
+                <img
+                  src="headshot.jpg"
+                  alt="Headshot"
+                  className="h-full w-full rounded-full"
+                />
+              </figure>
+              <div className="relative flex w-full items-center justify-center pt-8 pb-8">
+                <div className="relative flex w-full flex-col items-center justify-center p-6 text-center">
+                  <h3 className="font-serif text-[20px] font-bold text-sand/100 z-2">
+                    Camila Giraldo
+                  </h3>
+                  <p className="mt-0.5 text-sm font-semibold text-sand/90 z-2">
+                    Founder &amp; Bilingual Tutor
+                  </p>
                 </div>
               </div>
 
-              <div className="relative z-20 mx-2 -mt-10 rounded-2xl border border-line bg-white/95 p-6 shadow-panel backdrop-blur-md transition-all hover:shadow-2xl lg:-mt-12">
+              <div className="relative z-20 mx-2 -mt-10 rounded-2xl border border-line bg-white/95 p-4 shadow-panel backdrop-blur-md transition-all hover:shadow-2xl lg:-mt-12">
                 <div className="mb-2 flex items-center justify-between">
                   <h4 className="flex items-center gap-1.5 text-sm font-extrabold uppercase tracking-wider text-ocean">
                     <Icon name="psychology" className="text-base" />
@@ -94,14 +106,32 @@ export function Hero() {
                     Lead Educator
                   </span>
                 </div>
-                <p className="text-xs leading-relaxed text-ink/80 sm:text-sm">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
-                  incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-                  dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                </p>
+                <div className="text-xs leading-relaxed text-ink/80 sm:text-sm">
+                  Hello! I'm
+                  <strong className="text-toffee/80"> Camila Giraldo,</strong> a
+                  bilingual tutor with 10+ years of teaching experience and TEFL
+                  certification. As the proud daughter of Colombian immigrants,
+                  I bring native Spanish fluency and a passion for language
+                  immersion.
+                  <br />
+                  <p className="mt-2">
+                    My goal is to help you connect more deeply with diverse
+                    cultures while bringing a bold work ethic, resilient
+                    attitude, and compassionate approach to everything I do.
+                    Whether you're learning solo, with your children, or in a
+                    group—together, we will build those bilingual bridges!
+                  </p>
+                </div>
+                <Link
+                  className="text-xs leading-relaxed text-ocean/80 hover:text-ocean/100 sm:text-sm"
+                  href="/about"
+                >
+                  Learn More
+                </Link>
                 <div className="mt-3 flex items-center justify-between border-t border-skyline/20 pt-3 text-xs">
-                  <span className="font-semibold text-ocean">Fluent in English &amp; Español</span>
+                  <span className="font-semibold text-ocean">
+                    Fluent in English &amp; Español
+                  </span>
                   <span className="font-bold text-toffee">DELE &amp; TEFL</span>
                 </div>
               </div>

@@ -1,19 +1,19 @@
-import { Courses } from "./_components/courses";
-import { Hero } from "./_components/hero";
-import { SiteFooter } from "./_components/site-footer";
-import { SiteHeader } from "./_components/site-header";
-import { Testimonials } from "./_components/testimonials";
+import { Courses } from "./components/Courses";
+import { Hero } from "./components/Hero";
+import { Footer } from "./components/Footer";
+import { Navbar } from "./components/Navbar";
+import { Testimonials } from "./components/Testimonials";
 
 export default function Home() {
   return (
     <>
-      <SiteHeader />
+      <Navbar />
       <main className="w-full flex-1">
         <Hero />
         <Courses />
         <Testimonials />
       </main>
-      <SiteFooter />
+      <Footer />
     </>
   );
 }
