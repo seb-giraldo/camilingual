@@ -6,7 +6,7 @@ const navLinks = [
   { href: "/about", label: "About Cami" },
   {
     href: "https://substack.com/@camilingual",
-    label: "Blog",
+    label: "Substack",
     target: "_blank",
   },
 ];

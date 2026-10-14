@@ -6,13 +6,13 @@ const headshotMask =
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden h-[calc(100vh-80px)] py-16 lg:py-12">
+    <section className="flex relative overflow-hidden h-[calc(100vh-80px)] py-16 lg:py-12 justify-center">
       {/* Ambient background orbs */}
       <div className="pointer-events-none absolute -top-24 -left-20 h-96 w-96 rounded-full bg-skyline/25 blur-3xl" />
       <div className="pointer-events-none absolute top-1/2 right-0 h-[480px] w-[480px] rounded-full bg-tangerine/15 blur-3xl" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-6 h-full">
-        <div className="flex items-center gap-12 lg:grid-cols-12 lg:gap-8 h-full">
+        <div className="flex items-center justify-center gap-12 lg:grid-cols-12 lg:gap-8 h-full">
           <div className="flex flex-col items-start gap-6 lg:col-span-7">
             <div className="inline-flex items-center gap-2 rounded-full border border-skyline/50 bg-skyline/20 px-3.5 py-1.5 text-ocean">
               <span className="h-2 w-2 animate-pulse rounded-full bg-ocean" />
@@ -33,13 +33,13 @@ export function Hero() {
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
                 href="#courses"
-                className="rounded-xl bg-ocean px-7 py-3.5 text-base font-bold text-white shadow-md shadow-ocean/20 transition-all hover:-translate-y-0.5"
+                className="rounded-xl bg-ocean/95 px-7 py-3.5 text-base font-bold text-white shadow-md shadow-ocean/20 transition-all hover:scale-98 active:scale-95 active:bg-ocean/100"
               >
                 Explore Courses
               </a>
               <a
                 href="#trial"
-                className="rounded-xl bg-toffee px-7 py-3.5 text-base font-bold text-white shadow-md shadow-toffee/20 transition-all hover:-translate-y-0.5"
+                className="rounded-xl bg-toffee/95 px-7 py-3.5 text-base font-bold text-white shadow-md shadow-toffee/20 transition-all hover:scale-98 active:scale-95 active:bg-toffee/100"
               >
                 Book Free Trial
               </a>

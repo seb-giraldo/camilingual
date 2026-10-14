@@ -52,7 +52,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         <link rel="stylesheet" href={iconFontHref} />
       </head>
-      <body className="flex min-h-screen flex-col" suppressHydrationWarning>{children}</body>
+      <body className="flex min-h-screen flex-col" suppressHydrationWarning>
+        {children}
+      </body>
     </html>
   );
 }
